@@ -14,7 +14,7 @@ In Wercker, we need to define three environment variables, in the **Environment*
 
 **DOCKER_USERNAME**
 
-- format [cloud_tenant]/[cloud_username]
+- format [cloud\_tenant]/[cloud_username]
 - e.g. ocitenantexp/scott.tiger@example.com
 
 **DOCKER_PASSWORD**
@@ -25,7 +25,7 @@ In Wercker, we need to define three environment variables, in the **Environment*
 
 **DOCKER_REPO**
 
-- format [region].ocir.io/[cloud_tenant]/[registry_OCIR]
+- format [region].ocir.io/[cloud\_tenant]/[registry_OCIR]
 - e.g. eu-frankfurt-1.ocir.io/ocitenantexp/vltrep
 
 All three variables must have a Delete button on the right side.
@@ -47,7 +47,7 @@ Now, the database connection details are hardcoded in our application. These det
 
 **DB_SERVICE**
 
-- [PDB_service_name]
+- [PDB\_service_name]
 
 ## Step 2: Launch Web Service on Docker
 
@@ -194,9 +194,9 @@ Add this export to your .bash_profile by running this command:
 printf "\nexport KUBECONFIG=$HOME/.kube/config" >> $HOME/.bash_profile
 ````
 
-For the deployment, we need three variables: OKE_IMAGESECRET, OKE_MASTER, and OKE_TOKEN.
+For the deployment, we need three variables: OKE\_IMAGESECRET, OKE\_MASTER, and OKE_TOKEN.
 
-OKE_IMAGESECRET we create it, with a name we choose, e.g. ocirsecret. The creation requires [cloud_region], [cloud_tenant], [cloud_username], generated Auth Token [auth_token] all from Oracle Cloud. And the email address for your account on Docker Hub [docker_email]. 
+OKE\_IMAGESECRET we create it, with a name we choose, e.g. ocirsecret. The creation requires [cloud\_region], [cloud\_tenant], [cloud\_username], generated Auth Token [auth\_token] all from Oracle Cloud. And the email address for your account on Docker Hub [docker_email]. 
 
 This is the command we have to run - copy it in your notes file, and change the values with the correct ones:
 

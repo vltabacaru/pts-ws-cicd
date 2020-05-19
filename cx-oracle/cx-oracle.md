@@ -415,7 +415,9 @@ Listening on http://0.0.0.0:8080/
 Hit Ctrl-C to quit.
 ````
 
-In your browser open [http://localhost:8080/salary_increase/8](http://localhost:8080/salary_increase/8). It simulates a salary increase with 8% for all employees in our HR schema. Now open [http://localhost:8080/add_commission/.15](http://localhost:8080/add_commission/.15). This web service simulates adding 15% to the commission for all employees. 
+In your browser open [http://localhost:8080/salary\_increase/8](http://localhost:8080/salary_increase/8). It simulates a salary increase with 8% for all employees in our HR schema. 
+
+Now open [http://localhost:8080/add\_commission/.15](http://localhost:8080/add_commission/.15). This web service simulates adding 15% to the commission for all employees. 
 
 Hit Ctrl-C to close the application.
 
