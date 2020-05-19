@@ -19,11 +19,13 @@ Click on hamburger menu ≡, then Object Storage > Object Storage.
 
 Select the Compartment provided by instructor in the lower left drop-down list.
 
-Click Lab-Artefacts bucket. Click the ⋮ menu next to **id_rsa** key file for Mac/Linux or **id_rsa.ppk** key file for Windows, and Download. Save file. This is the SSH private key.
+Click Lab-Artefacts bucket. Click the ⋮ menu next to **id\_rsa** key file for Mac/Linux or **id_rsa.ppk** key file for Windows, and Download. Save file. This is the SSH private key.
 
 ## Step 2: Connect with Secure Shell
 
 Use the SSH private key to connect to the sandbox machine. At the same time, add two tunnels for ports 8080 and 8001 we will need later in this workshop.
+
+**sandbox_vm** name is provided by the instructor.
 
 ````
 ssh -C -i /path/to/id_rsa -L 8080:localhost:8080 -L 8001:localhost:8001 opc@[sandbox_vm]
@@ -78,15 +80,15 @@ During the workshop, we will need some OCID values from Oracle Cloud console. Ge
 
 ### User OCID
 
-On Oracle Cloud console, or click on profile icon 👤 on upper right corner, then on the name of your user. Copy OCID: ocid1.user.oc1..aa[some_long_string]xi5q
+On Oracle Cloud console, or click on profile icon 👤 on upper right corner, then on the name of your user. Copy OCID: ocid1.user.oc1..aa[some\_long_string]xi5q
 
 ### Tenancy OCID
 
-Click on hamburger menu ≡, then Administration > **Tenancy Details**. Copy OCID: ocid1.tenancy.oc1..aa[some_long_string]3gfa
+Click on hamburger menu ≡, then Administration > **Tenancy Details**. Copy OCID: ocid1.tenancy.oc1..aa[some\_long_string]3gfa
 
 ### Compartment OCID
 
-Click on hamburger menu ≡, then Identity > **Compartments**. Click on your Compartment. Copy OCID: ocid1.compartment.oc1..aa[some_long_string]s6ha
+Click on hamburger menu ≡, then Identity > **Compartments**. Click on your Compartment. Copy OCID: ocid1.compartment.oc1..aa[some\_long_string]s6ha
 
 ## Acknowledgements
 

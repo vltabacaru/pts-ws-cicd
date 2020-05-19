@@ -12,7 +12,7 @@ Open your browser and navigate to Oracle Cloud console. Click on hamburger menu 
 
 On the left side, click on Nodes, and copy the Public IP Address in your notes file. This is the [DB System Public IP].
 
-On the right side, under Network, copy the Host Domain Name in your notes file. This is the [Host Domain Name]. The name of your PDB (e.g. pdb03) + '.' + [Host Domain Name] gives you the [PDB_service_name] (e.g. pdb03.sub000000.hol-vcn.oraclevcn.com). Write down the [PDB_service_name] in your notes text file. 
+On the right side, under Network, copy the Host Domain Name in your notes file. This is the [Host Domain Name]. The name of your PDB (e.g. pdb03) + '.' + [Host Domain Name] gives you the [PDB\_service\_name] (e.g. pdb03.sub000000.hol-vcn.oraclevcn.com). Write down the [PDB\_service_name] in your notes text file. 
 
 ````
 pdb03.sub[Number].hol-vcn.oraclevcn.com
@@ -50,7 +50,7 @@ JOB_HISTORY
 
 ## Step 3: Connect to Oracle Database from Python
 
-Back on our development environment, let's connect our Python microservice to our Oracle Database. This enhancement requires [cx_Oracle](https://oracle.github.io/python-cx_Oracle/) extension module.
+Back on our development environment, let's connect our Python microservice to our Oracle Database. This enhancement requires [cx\_Oracle](https://oracle.github.io/python-cx_Oracle/) extension module.
 
 ````
 pip install cx_Oracle
@@ -275,7 +275,7 @@ build:
             pytest -v --cov=promotion
 ````
 
-This step adds a new package repository, installs two required packages, Oracle Instant Client 19.6, and sets **LD_LIBRARY_PATH** environment variable.
+This step adds a new package repository, installs two required packages, Oracle Instant Client 19.6, and sets **LD\_LIBRARY_PATH** environment variable.
 
 Commit and push the changes.
 
