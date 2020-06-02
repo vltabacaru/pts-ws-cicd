@@ -80,7 +80,7 @@ Finally, add the connection code to the '\_\_main__' section.
     DBSERV = '[PDB_service_name]'
     conn_string = DBUSER + '/' + DBPASS + '@//' + DBHOST + '/' + DBSERV
     connection = cx_Oracle.connect(conn_string)
-    run(app, host='0.0.0.0', port=8080)
+    run(app, host='0.0.0.0', port=80XX)
     connection.close()
 ````
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
     DBSERV = '[PDB_service_name]'
     conn_string = DBUSER + '/' + DBPASS + '@//' + DBHOST + '/' + DBSERV
     connection = cx_Oracle.connect(conn_string)
-    run(app, host='0.0.0.0', port=8080)
+    run(app, host='0.0.0.0', port=80XX)
     connection.close()
 ````
 
@@ -168,11 +168,11 @@ On our development environment, try again the application
 ````
 python3 promotion.py 
 Bottle v0.12.18 server starting up (using WSGIRefServer())...
-Listening on http://0.0.0.0:8080/
+Listening on http://0.0.0.0:80XX/
 Hit Ctrl-C to quit.
 ````
 
-Use the web browser on your laptop to open [http://localhost:8080/conn](http://localhost:8080/conn). The response is '19.6.0.0.0'. Your Python web micro service application is connected to your Oracle Database. Press Ctrl-C to stop the application.
+Use the web browser on your laptop to open [http://localhost:80XX/conn](http://localhost:80XX/conn). The response is '19.6.0.0.0'. Your Python web micro service application is connected to your Oracle Database. Press Ctrl-C to stop the application.
 
 Edit test_promotion.py, and add a unit test for database connection. This is how it has to be:
 
@@ -308,11 +308,11 @@ Test the web service locally, on the development environment.
 ````
 python3 promotion.py 
 Bottle v0.12.18 server starting up (using WSGIRefServer())...
-Listening on http://0.0.0.0:8080/
+Listening on http://0.0.0.0:80XX/
 Hit Ctrl-C to quit.
 ````
 
-Use the web browser on your laptop to open [http://localhost:8080/employees](http://localhost:8080/employees). It shows a table with all employees in the HR schema. Hit Ctrl-C. Commit and push the changes.
+Use the web browser on your laptop to open [http://localhost:80XX/employees](http://localhost:80XX/employees). It shows a table with all employees in the HR schema. Hit Ctrl-C. Commit and push the changes.
 
 ````
 git commit -a -m "Add new feature to list employees"
@@ -411,13 +411,13 @@ If all steps were followed correctly, this build is successful. We can test the 
 ````
 python3 promotion.py 
 Bottle v0.12.18 server starting up (using WSGIRefServer())...
-Listening on http://0.0.0.0:8080/
+Listening on http://0.0.0.0:80XX/
 Hit Ctrl-C to quit.
 ````
 
-In your browser open [http://localhost:8080/salary\_increase/8](http://localhost:8080/salary_increase/8). It simulates a salary increase with 8% for all employees in our HR schema. 
+In your browser open [http://localhost:80XX/salary\_increase/8](http://localhost:80XX/salary_increase/8). It simulates a salary increase with 8% for all employees in our HR schema. 
 
-Now open [http://localhost:8080/add\_commission/.15](http://localhost:8080/add_commission/.15). This web service simulates adding 15% to the commission for all employees. 
+Now open [http://localhost:80XX/add\_commission/.15](http://localhost:80XX/add_commission/.15). This web service simulates adding 15% to the commission for all employees. 
 
 Hit Ctrl-C to close the application.
 

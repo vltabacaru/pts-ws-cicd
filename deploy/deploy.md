@@ -38,7 +38,7 @@ deploy:
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: patch deployment/orcl-ws-app -p '{"spec":{"progressDeadlineSeconds":120}}'
+        command: patch deployment/usrXX-ws-app -p '{"spec":{"progressDeadlineSeconds":120}}'
 
     # Step 5: watch the deployment. If after 120s pods are considered healthy, the step will exit 0
     - kubectl:
@@ -46,7 +46,7 @@ deploy:
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: rollout status deployment/orcl-ws-app
+        command: rollout status deployment/usrXX-ws-app
 ````
 
 This Pipeline has five Steps, and uses the two templates provided as YML files, one for the Docker container deployment, the other for the Docker service. It also uses some default Wercker variables, like WERCKER_OUTPUT_DIR, and the custom environment variables we defined, like OKE_MASTER. Last three steps use Kubectl tool to apply the definition in the YML files, wait for two minutes, and verify the deployment.
@@ -133,18 +133,18 @@ From the command line, check if the deployment was successful.
 kubectl get deployments
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 kubernetes-bootcamp   1/1     1            1           11m
-orcl-ws-app           1/1     1            1           3m34s
+usrXX-ws-app           1/1     1            1           3m34s
 ````
 
 ## Step 3: Run Web Service
 
-Open Kubernetes Dashboard, login using the token, and check the deployment on Overview under **Deployments**. Go down on the page, and view our Python microservice under **Services**, **orcl-ws-app**. Copy the IP address of this microservice under External endpoints, [orcl-ws-app-IP]. 
+Open Kubernetes Dashboard, login using the token, and check the deployment on Overview under **Deployments**. Go down on the page, and view our Python microservice under **Services**, **usrXX-ws-app**. Copy the IP address of this microservice under External endpoints, [usrXX-ws-app-IP]. 
 
-Open a browser on your laptop, and navigate to [orcl-ws-app-IP]/conn. The response is '19.6.0.0.0'. Your Python web micro service application is connected to your Oracle Database and it returns the Database version.
+Open a browser on your laptop, and navigate to [usrXX-ws-app-IP]/conn. The response is '19.6.0.0.0'. Your Python web micro service application is connected to your Oracle Database and it returns the Database version.
 
-In your browser open [orcl-ws-app-IP]/salary_increase/8. It simulates a salary increase with 8% for all employees in our HR schema. 
+In your browser open [usrXX-ws-app-IP]/salary_increase/8. It simulates a salary increase with 8% for all employees in our HR schema. 
 
-Now open [orcl-ws-app-IP]/add_commission/.15. This web service simulates adding 15% to the commission for all employees. 
+Now open [usrXX-ws-app-IP]/add_commission/.15. This web service simulates adding 15% to the commission for all employees. 
 
 On Kubernetes Dashboard, on Overview, under Pods, see on which node is deployed your application (10.0.0.XX). Navigate to Cluster > Nodes, and click on this node. Get this node **ExternalIP** next to Addresses.
 

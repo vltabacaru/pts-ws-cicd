@@ -14,7 +14,7 @@ Open [https://app.wercker.com](https://app.wercker.com) and login with your GitH
 
 Click the **+** sign next to profile icon 👤 on upper right corner, and **Add Application**.
 
-- Select SCM: GutHub
+- Select SCM: GitHub
 - Select Repository: [Your Username]/orcl-ws-cicd
 - Setup SSH key: wercker will check out the code without using an SSH key
 
@@ -154,7 +154,7 @@ def decrease(salary, amount):
 
 
 if __name__ == '__main__':
-    run(app, host='0.0.0.0', port=8080)
+    run(app, host='0.0.0.0', port=80XX)
 ````
 
 The first two lines we added import Bottle library and define our application. On top of every function we have, we added a routing, a function call based on a URL. Every routing may have parameters, or not. Our routings have two parameters. At the end of the file we added a '\_\_main__' section, is the name of the scope in which top-level code executes. This is where we run the web service application server, a built-in HTTP development server that comes with Bottle.
@@ -303,11 +303,11 @@ We can test the web service Python application locally, executing the code on th
 ````
 python3 promotion.py 
 Bottle v0.12.18 server starting up (using WSGIRefServer())...
-Listening on http://0.0.0.0:8080/
+Listening on http://0.0.0.0:80XX/
 Hit Ctrl-C to quit.
 ````
 
-Use the web browser on your laptop to open [http://localhost:8080/addition/1000/200](http://localhost:8080/addition/1000/200). The response is '1200'. Congratulations! Your Python web micro service application is running. Press Ctrl-C to stop the application.
+Use the web browser on your laptop to open [http://localhost:80XX/addition/1000/200](http://localhost:80XX/addition/1000/200). The response is '1200'. Congratulations! Your Python web micro service application is running. Press Ctrl-C to stop the application.
 
 ## Acknowledgements
 

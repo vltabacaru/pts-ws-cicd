@@ -121,11 +121,11 @@ Now, we can add the Docker push image Step in **wercker.yml**. Add this step at 
     # Step 4: push application in Docker image to OCIR 
     - internal/docker-push:
             entrypoint: ./promotion
-            cmd: 0.0.0.0 8080
+            cmd: 0.0.0.0 80XX
             env: "DB_USER=${DB_USER} DB_PASSWORD=${DB_PASSWORD} DB_HOST=${DB_HOST} DB_SERVICE=${DB_SERVICE}"
             working-dir: $WERCKER_ROOT
             tag: $WERCKER_GIT_COMMIT
-            ports: "8080"
+            ports: "80XX"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
             repository: $DOCKER_REPO

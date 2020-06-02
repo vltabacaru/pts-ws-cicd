@@ -8,7 +8,7 @@ Navigate to [https://github.com](https://github.com/) and create an account.
 
 Fork [vltabacaru/orcl-ws-cicd](https://github.com/vltabacaru/orcl-ws-cicd) project in your account. It creates a copy of this repository in your account [Your Username]/orcl-ws-cicd. In your repository, click on **Clone or download**, and copy the URL in your notes text file. It looks like https://github.com/[Your Username]/orcl-ws-cicd.git.
 
->**Important Note** : All exercises for this workshop have to be executed as **userXX** user assigned by instructor.
+>**Important Note** : All exercises for this workshop have to be executed on **sandbox_vm** as **userXX** user assigned by instructor.
 
 As a file editor, you have two options, use the command line and **vim** editor, or use the Remote Desktop connection and **gedit** editor. 
 
@@ -42,6 +42,20 @@ This repository contains only three files, a readme, and two template files we w
 ````
 ls
 keys  kubernetes_deployment.yml.template  kubernetes_service.yml.template  README.md
+````
+
+Edit both templates using your favourite editor, and change application name **orcl-ws-app**, container name **orcl-ws-srv**, and port number **8080** with your personal values: **usrXX-ws-app**, **usrXX-ws-srv**, and **80XX**, where XX is your **userXX** number. You can use the following commands to apply these changes.
+
+````
+sed -i -e 's/orcl-ws-app/usrXX-ws-app/g' kubernetes_deployment.yml.template
+
+sed -i -e 's/orcl-ws-srv/usrXX-ws-srv/g' kubernetes_deployment.yml.template
+
+sed -i -e 's/8080/80XX/g' kubernetes_deployment.yml.template
+
+sed -i -e 's/orcl-ws-app/usrXX-ws-app/g' kubernetes_service.yml.template
+
+sed -i -e 's/8080/80XX/g' kubernetes_service.yml.template
 ````
 
 ## Step 2: Start Application Development
@@ -95,6 +109,12 @@ For automated testing, we will use three Python tools:
 1. flake8 (called linter) - used to check if the code conforms to the Python coding standards, and analyze code for potential errors;
 2. pytest - a standard Python unit testing library designed to check a single unit of code (in our case a function);
 3. pytest-cov - extension of pytest, that calculates the percentage of source code that is covered by unit tests.
+
+It is a good practice to update pip installation tool.
+
+````
+pip install --upgrade pip
+````
 
 We install these tools in our Python virtual environment orclvenv.
 

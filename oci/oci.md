@@ -23,12 +23,16 @@ Click Lab-Artefacts bucket. Click the ⋮ menu next to **id\_rsa** key file for 
 
 ## Step 2: Connect with Secure Shell
 
-Use the SSH private key to connect to the sandbox machine. At the same time, add two tunnels for ports 8080 and 8001 we will need later in this workshop.
+Use the SSH private key to connect to the sandbox machine. At the same time, add two tunnels for ports **80XX** and 8001 we will need later in this workshop. Port **80XX** is your Python web service port number, it results from adding your **userXX** number to 8060. These ports will be in the range 8061 - 8080.
 
-**sandbox_vm** name is provided by the instructor.
+Write down in your notes file:
+
+- Python Web Service Port: 8060 + XX (your userXX number)
+
+**userXX** (XX is a number from 01 to 20) and **sandbox_vm** name is provided by the instructor.
 
 ````
-ssh -C -i /path/to/id_rsa -L 8080:localhost:8080 -L 8001:localhost:8001 opc@[sandbox_vm]
+ssh -C -i /path/to/id_rsa -L 80XX:localhost:80XX -L 8001:localhost:8001 userXX@[sandbox_vm]
 ````
 
 ## Step 3: Connect with Oracle Secure Global Desktop
